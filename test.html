@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // concat, filter, map, slice, 스프레드(전개) 연산자
+
+      // 1. 스프레드 연산자
+      const a = [1, 2, 3];
+      // const b = a      : 얕은복사
+      const b = [...a]; // 스프레드연산자 (깊은복사)    a
+      b.push(4);
+      console.log('a의값은: ${a}'); // a 는 4가 없음. 얕은복사하면 있음
+      const c = [...a, 4]; //concat 할수있음
+
+      // 2. 추가하기 (깊은복사)  추로 add 할때
+      const a2 = [1, 2, 3];
+      const b2 = a2.concat(4); // 1,2,3,4
+      //push 하면 a2 값이 변하는거임. 변하면 안됨
+
+      // 3. 걸러내기  // 주로 삭제할때 씀
+      const a3 = [1, 2, 3];
+      a3.filter((n) => {
+        return n != 1;
+      }); // bool을 return 받는다. -> true만 걸러낸다.
+
+      // 4. 잘라내기
+      const a4 = [1, 2, 3];
+      const b4 = a4.slice(0, 2); // 0<= <2
+      // const c4 = [a4.slice(0,2)]    --- 배열의 배열
+      const c4 = [...a4.slice(0, 2), 4, ...a4.slice(2, 3)]; // 삽입
+
+      // 5. 반복하기
+      const a5 = [1, 2, 3];
+      // a5.forEach((n)=>{console.log(n)})   // forEach는 return 값이 void 임
+      const b5 = a5.map((n) => {
+        return n;
+      }); // const b5 = [...a5] 깊은복사이므로 다른 값임
+    </script>
+  </body>
+</html>
