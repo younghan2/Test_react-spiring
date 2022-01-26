@@ -1,5 +1,3 @@
-## Git 사용법 연습
+## Git test
 
 # Gigigigigig
-
-dsfadfasddfasdfasdfdsa
