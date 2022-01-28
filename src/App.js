@@ -1,5 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
+import { Router } from 'react-router-dom';
+import Navigation from './components/Navigation';
+import ListPage from './pages/ListPage';
+import WritePage from './pages/WritePage';
 
 // 1. 실행과정
 // 2. JSX 문법
@@ -13,19 +15,12 @@ import './App.css';
 //    - 외부 파일에 적는 방법
 //    - 라이브러리 사용 (부트스트랩, component-styled(추천))
 
-let a = 10;
-const b = 20;
-
 function App() {
-  let list = [1, 2, 3]; // rest 컨트롤러로 응답받은 데이터
-
   return (
     <div>
-      <div>
-        {list.map((n) => (
-          <h1>{n}</h1>
-        ))}
-      </div>
+      <Navigation />
+      <Router path="/" exact={true} component={ListPage} />
+      <Router path="/write" exact={true} component={WritePage} />
     </div>
   );
 }
