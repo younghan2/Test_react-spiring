@@ -1,7 +1,5 @@
 import { Router } from 'react-router-dom';
-import Navigation from './components/Navigation';
 import ListPage from './pages/ListPage';
-import WritePage from './pages/WritePage';
 
 // 1. 실행과정
 // 2. JSX 문법
@@ -18,9 +16,7 @@ import WritePage from './pages/WritePage';
 function App() {
   return (
     <div>
-      <Navigation />
-      <Router path="/" exact={true} component={ListPage} />
-      <Router path="/write" exact={true} component={WritePage} />
+      <ListPage />
     </div>
   );
 }
